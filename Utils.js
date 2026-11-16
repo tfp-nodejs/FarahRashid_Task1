@@ -1,23 +1,10 @@
-
-async function getPost() {
-  try {
-    const response = await fetch("https://jsonplaceholder.typicode.com/posts/");
-
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
+function filterCostum(postArray) {
+  const result = [];
+  for (let i = 0; i < postArray.length; i++) {
+    if (postArray[i].title.length < 25) {
+      result.push(postsArray[i]); 
     }
-
-    const data = await response.json();
-
-    const filterCostum = data.filter(
-      (post) => post.title.length < 25
-    );
-
-    console.log("Posts titles < 25 characters:", filterCostum);
-
-  } catch (error) {
-    console.error("AJAX Request Failed:", error);
-  }
+  }  
+  return result;
 }
-
-getPost();
+export { filterCostum };
