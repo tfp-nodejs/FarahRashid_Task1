@@ -1,10 +1,10 @@
 function filterCostum(postArray) {
   const result = [];
-  for (let i = 0; i < postArray.length; i++) {
-    if (postArray[i].title.length < 25) {
-      result.push(postsArray[i]); 
+  for (const post of postArray) {
+    if (post.title.length < 25) {
+      result.push(post);
     }
-  }  
+  }
   return result;
 }
 export { filterCostum };
