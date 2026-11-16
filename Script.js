@@ -13,7 +13,7 @@ async function getPost() {
       (post) => post.title.length < 25
     );
 
-    console.log("Posts titles less than 25 characters:", filterCostum);
+    console.log("Posts titles < 25 characters:", filterCostum);
 
   } catch (error) {
     console.error("AJAX Request Failed:", error);
