@@ -1,10 +1,15 @@
-function filterCostum(postArray) {
-  const result = [];
-  for (const post of postArray) {
-    if (post.title.length < 25) {
-      result.push(post);
+function filterItems(items, condition) {
+  let newArray = [];
+
+  for (let index = 0; index < items.length; index++) {
+    const currentItem = items[index];
+
+    if (condition(currentItem, index, items)) {
+      newArray[newArray.length] = currentItem;
     }
   }
-  return result;
+
+  return newArray;
 }
-export { filterCostum };
+
+module.exports = { customFilter: filterItems };
